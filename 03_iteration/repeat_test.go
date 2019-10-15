@@ -6,7 +6,7 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	got := Repeat("a")
+	got := Repeat("a", 5)
 	expect := "aaaaa"
 
 	if got != expect {
@@ -16,12 +16,12 @@ func TestRepeat(t *testing.T) {
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat("a", 5)
 	}
 }
 
 func ExampleRepeat() {
-	result := Repeat("z")
+	result := Repeat("z", 3)
 	fmt.Println(result)
-	// Output: zzzzz
+	// Output: zzz
 }
